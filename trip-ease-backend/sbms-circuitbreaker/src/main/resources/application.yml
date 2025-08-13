@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      redisService:
+        registerHealthIndicator: true
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 5
+        waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 2
+        slidingWindowSize: 10
