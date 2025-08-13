@@ -1,0 +1,19 @@
+Eureka Server: 
+http://localhost:8761/
+
+Admin Server:
+http://localhost:1111/applications/
+
+Zipkin Server:
+http://127.0.0.1:9411/zipkin/
+
+GREET API:
+-Dserver.port=9091
+
+http://localhost:9091/greet
+http://localhost:9092/greet
+http://localhost:9093/greet
+
+WELCOME API:
+http://localhost:8081/welcome
+
