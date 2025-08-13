@@ -1,16 +1,29 @@
+server:
+  port: 3333
+
 spring:
   application:
-    name: CLOUD-API-GATEWAY
+    name: API-GATEWAY-SERVICE
+
   cloud:
     gateway:
       routes:
-        - id: welcome-service
-          uri: lb://WELCOME-API
-          predicates:
-            - Path=/welcome/**
         - id: greet-service
           uri: lb://GREET-API
           predicates:
             - Path=/greet/**
-server:
-  port: 3333
+        - id: greet-service
+          uri: lb://WELCOME-API 
+          predicates:
+            - Path=/welcome/**
+    config:
+      enabled: false
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    hostname: localhost
