@@ -11,9 +11,9 @@ import com.tripease.user_service.util.JavaToJsonConverter;
 // 
 //	@SpringBootConfiguration
 //	@EnableAutoConfiguration
-//	@ComponentScan(basePackages = "")
+//	@ComponentScan(basePackages = "", excludeFilters ="")
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages="com.tripease.user_service")
 public class UserServiceApplication
 {
 	public static void main(String[] args)
